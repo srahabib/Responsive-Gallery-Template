@@ -1,0 +1,276 @@
+* {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+     /* debug */
+     /* background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important; */
+  }
+  
+  html {
+    height:100%;
+    width:100%;
+    margin:0%;
+    padding:0%;
+    overflow-x: hidden;
+    font-family: 'PT Sans Narrow', sans-serif;
+  }
+  body{
+    overflow-x: hidden;
+    background-color: #fafafa;
+  }
+
+  /*Styling gallery*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 5rem;
+    padding-left: 5rem; 
+  }
+  
+  .y img {
+    width: 100%;
+  }
+
+  .y {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .y img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+  
+  
+  /*hover effect*/
+  .image-box {
+    position: relative;
+    background-size: cover; 
+  }
+  .image-box:before {
+    content: "";
+    position: absolute;
+    top:.4rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  .image-box:hover {
+    cursor: pointer;
+  
+  }
+  .image-box:hover:before {
+    opacity: 0.3;
+  }
+  .image-box:hover .box-content {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+  }
+  .box-content{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    color: #fff;
+    transition: 0.3s;
+    padding: 0.75em;
+    visibility: visibile;
+  }
+  
+    .box-content .icon, .box-content .icon--add, .box-content .icon--download, .box-content .icon--likes {
+    border: 1px solid #fff;
+    width: 60px;
+    height: 32px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    margin: 0.5em 0 0.5em 0.5em;
+    color: #fff;
+    transition: 0.4s;
+    opacity: 0.6;
+  } 
+  
+  .btm-r8 .icon--download{
+    margin: 1rem;
+    margin-bottom: 1.3rem;
+  
+  }
+  
+  .box-content .icon:hover, .box-content .icon--add:hover, .box-content .icon--download:hover, .box-content .icon--likes:hover {
+    opacity: 1;
+  }
+  .box-content .icon--likes .fa-heart {
+    color: #fff;
+    opacity: 0.4;
+    font-size: 13px;
+  }
+  .box-content .icon--likes p {
+    padding-left: 0.5em;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .box-content .icon--add, .box-content .icon--download {
+    width: 37px;
+    justify-content: center;
+  }
+  
+    .box-content__upper {
+    padding: 1rem;
+    display: flex;
+    position: absolute;
+    top:0;
+    right: 0;
+  }
+  .box-content__lower {
+    padding: 1rem;
+    display: flex; 
+    position: absolute;
+    bottom:0;
+    left: 0;
+  
+  }
+  .box-content__lower .user {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .icon--download{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .box-content__lower .user__avatar img {
+    background-size: cover;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+     opacity: 0.8;
+  }
+  .box-content__lower .user__name {
+    font-family: Courier, monospace;
+    font-size: 1rem;
+    padding-left: 0.75em;
+    opacity: 0.7;
+  }
+  .box-content__lower .user__name:hover {
+    opacity: 1;
+  }
+  /*hover effect Ends here */ 
+  
+  .mobileview{
+    display: none;
+  }
+  
+  .tabletview{
+    display: none;
+  }
+
+
+
+
+  
+
+
+@media (max-width: 1024px){
+ 
+  .gallery{
+    display: none;
+  }
+  .tabletview{
+    display: flex;
+    justify-content: center;
+
+  }
+  .y{
+    flex: 100%;
+    max-width: 30%;
+    align-items: center;
+  }
+
+  .box-content__lower p{
+    font-size: .7rem;
+
+  }
+  .image-box:hover:before{
+    opacity: 0;
+  }
+
+  .image-box .box-content {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+  } 
+  .image-box:hover:before{
+    opacity: 0;
+  }
+
+  .box-content__upper,
+  .btm-r8{
+    display: none;
+
+  } 
+  
+}
+
+ @media (max-width: 860px) {
+  .box-content__lower{
+    margin: 0;
+    padding: 0.5rem;
+  }
+} 
+
+/*three col view*/
+ @media (max-width: 720px){
+
+  .gallery{
+    display: none;
+  }
+  .y{
+    flex: 50%;
+    max-width: 50%;
+  }
+  .tabletview{
+    display: none;
+  }
+  .mobileview{
+    display: flex;
+  }
+}
+
+@media (max-width: 460px){
+
+  .user__name p {
+    font-size: 1rem;
+  }
+
+  .gallery {
+    padding-right: 0rem;
+    padding-left: 0rem;
+    display: flex;
+   }  
+
+  .tabletview,
+  .mobileview{
+    display: none;
+  }
+
+  .y {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
